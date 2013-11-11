@@ -24,3 +24,18 @@ colorscheme solarized
 set terminal to screen-256color
 solarized dark color scheme applied.
 
+fritz
+======================
+https://github.com/tpope/vim-pathogen
+https://github.com/altercation/vim-colors-solarized
+https://github.com/tpope/vim-rails
+
+
+mkdir -p ~/.vim/autoload; \
+curl -Sso ~/.vim/autoload/pathogen.vim \
+  https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+
+
+ln -s ~/configurations/vimrc/vimrc ~/.vimrc
+ln -s ~/configurations/vimrc/bundle ~/.vim/bundle
+

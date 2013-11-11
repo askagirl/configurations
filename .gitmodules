@@ -1,0 +1,9 @@
+[submodule "vimrc/bundle/vim-rails"]
+	path = vimrc/bundle/vim-rails
+	url = git://github.com/tpope/vim-rails.git
+[submodule "vimrc/bundle/vim-bundler"]
+	path = vimrc/bundle/vim-bundler
+	url = git://github.com/tpope/vim-bundler.git
+[submodule "vimrc/bundle/vim-colors-solarized"]
+	path = vimrc/bundle/vim-colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
