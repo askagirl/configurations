@@ -29,6 +29,13 @@ fritz
 https://github.com/tpope/vim-pathogen
 https://github.com/altercation/vim-colors-solarized
 https://github.com/tpope/vim-rails
+https://github.com/scrooloose/nerdtree
+https://github.com/tpope/vim-abolish
+https://github.com/tpope/vim-bundler
+
+git submodule add https://github.com/scrooloose/nerdtree.git vimrc/bundle/nerdtree
+git submodule add git://github.com/tpope/vim-abolish.git vimrc/bundle/vim-abolish
+cp -R vimrc/bundle/* ~/.vim/bundle
 
 
 mkdir -p ~/.vim/autoload; \
@@ -38,4 +45,5 @@ curl -Sso ~/.vim/autoload/pathogen.vim \
 
 ln -s ~/configurations/vimrc/vimrc ~/.vimrc
 ln -s ~/configurations/vimrc/bundle ~/.vim/bundle
+
 

@@ -7,3 +7,9 @@
 [submodule "vimrc/bundle/vim-colors-solarized"]
 	path = vimrc/bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "vimrc/bundle/nerdtree"]
+	path = vimrc/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vimrc/bundle/vim-abolish"]
+	path = vimrc/bundle/vim-abolish
+	url = git://github.com/tpope/vim-abolish.git
