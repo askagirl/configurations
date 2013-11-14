@@ -43,7 +43,10 @@ curl -Sso ~/.vim/autoload/pathogen.vim \
   https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
 
+ln -s ~/configurations/tmux/tmux.conf ~/.tmux.conf
 ln -s ~/configurations/vimrc/vimrc ~/.vimrc
 ln -s ~/configurations/vimrc/bundle ~/.vim/bundle
 
 
+==========================
+sudo apt-get install vim git tmux
