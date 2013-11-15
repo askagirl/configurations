@@ -51,3 +51,11 @@ augroup rubies
   autocmd!
   autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
 augroup END
+
+set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+
+" Always show statusline
+set laststatus=2
+
+" Use 256 colours (Use this setting only if your terminal supports 256 colours)
+set t_Co=256
