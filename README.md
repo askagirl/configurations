@@ -33,6 +33,9 @@ https://github.com/scrooloose/nerdtree
 https://github.com/tpope/vim-abolish
 https://github.com/tpope/vim-bundler
 
+powerline
+  http://askubuntu.com/questions/283908/how-can-i-install-and-use-powerline-plugin
+
 git submodule add https://github.com/scrooloose/nerdtree.git vimrc/bundle/nerdtree
 git submodule add git://github.com/tpope/vim-abolish.git vimrc/bundle/vim-abolish
 cp -R vimrc/bundle/* ~/.vim/bundle

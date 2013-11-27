@@ -11,8 +11,9 @@ set bs=indent,eol,start
 set cindent
 set smartindent
 set ruler
-set ts=8
-set sts=2
+set ts=4
+set sw=4
+set sts=4
 set et
 set history=999
 set foldmethod=marker
@@ -47,6 +48,11 @@ filet on
 
 runtime! macros/matchit.vim
 
+augroup pythons
+  autocmd!
+  autocmd FileType python set ai sw=2 sts=2 et
+augroup END
+
 augroup rubies
   autocmd!
   autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
@@ -59,3 +65,39 @@ set laststatus=2
 
 " Use 256 colours (Use this setting only if your terminal supports 256 colours)
 set t_Co=256
+
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Fireplace (Clojure support)
+Bundle 'tpope/vim-fireplace'
+  
+" Rainbow parentheses
+Bundle 'kien/rainbow_parentheses.vim'
+"  Parentheses colours using Solarized
+let g:rbpt_colorpairs = [
+  \ [ '13', '#6c71c4'],
+  \ [ '5',  '#d33682'],
+  \ [ '1',  '#dc322f'],
+  \ [ '9',  '#cb4b16'],
+  \ [ '3',  '#b58900'],
+  \ [ '2',  '#859900'],
+  \ [ '6',  '#2aa198'],
+  \ [ '4',  '#268bd2'],
+  \ ]
+
+" Enable rainbow parentheses for all buffers
+augroup rainbow_parentheses
+        au!
+        au VimEnter * RainbowParenthesesActivate
+        au BufEnter * RainbowParenthesesLoadRound
+        au BufEnter * RainbowParenthesesLoadSquare
+        au BufEnter * RainbowParenthesesLoadBraces
+augroup END
+
+" SlimV
+Bundle 'kovisoft/slimv'
+  
+" vim-clojure-static
+Bundle 'guns/vim-clojure-static'

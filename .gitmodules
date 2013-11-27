@@ -16,3 +16,18 @@
 [submodule "vimrc/bundle/vim-taglist"]
 	path = vimrc/bundle/vim-taglist
 	url = https://github.com/emnh/taglist.vim
+[submodule "vimrc/bundle/vundle"]
+	path = vimrc/bundle/vundle
+	url = https://github.com/gmarik/vundle.git
+[submodule "vimrc/bundle/vim-fireplace"]
+	path = vimrc/bundle/vim-fireplace
+	url = git://github.com/tpope/vim-fireplace.git
+[submodule "vimrc/bundle/vim-classpath"]
+	path = vimrc/bundle/vim-classpath
+	url = git://github.com/tpope/vim-classpath.git
+[submodule "vimrc/bundle/vim-clojure-static"]
+	path = vimrc/bundle/vim-clojure-static
+	url = git://github.com/guns/vim-clojure-static.git
+[submodule "vimrc/bundle/rainbow_parentheses"]
+	path = vimrc/bundle/rainbow_parentheses
+	url = https://github.com/kien/rainbow_parentheses.vim
