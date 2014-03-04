@@ -53,3 +53,8 @@ ln -s ~/configurations/vimrc/bundle ~/.vim/bundle
 
 ==========================
 sudo apt-get install vim git tmux
+
+TODO
+===============================
+http://sjl.bitbucket.org/gundo.vim/#requirements
+https://github.com/gmarik/Vundle.vim 설치
