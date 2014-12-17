@@ -26,29 +26,36 @@ solarized dark color scheme applied.
 
 fritz
 ======================
-https://github.com/tpope/vim-pathogen
-https://github.com/altercation/vim-colors-solarized
-https://github.com/tpope/vim-rails
-https://github.com/scrooloose/nerdtree
-https://github.com/tpope/vim-abolish
-https://github.com/tpope/vim-bundler
+* https://github.com/tpope/vim-pathogen
+* https://github.com/altercation/vim-colors-solarized
+* https://github.com/tpope/vim-rails
+* https://github.com/scrooloose/nerdtree
+* https://github.com/tpope/vim-abolish
+* https://github.com/tpope/vim-bundler
 
 powerline
+
   http://askubuntu.com/questions/283908/how-can-i-install-and-use-powerline-plugin
 
 git submodule add https://github.com/scrooloose/nerdtree.git vimrc/bundle/nerdtree
+
 git submodule add git://github.com/tpope/vim-abolish.git vimrc/bundle/vim-abolish
+
 cp -R vimrc/bundle/* ~/.vim/bundle
 
 
 mkdir -p ~/.vim/autoload; \
+
 curl -Sso ~/.vim/autoload/pathogen.vim \
+
   https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
 
-ln -s ~/configurations/tmux/tmux.conf ~/.tmux.conf
-ln -s ~/configurations/vimrc/vimrc ~/.vimrc
-ln -s ~/configurations/vimrc/bundle ~/.vim/bundle
+  ln -s ~/configurations/tmux/tmux.conf ~/.tmux.conf
+  
+  ln -s ~/configurations/vimrc/vimrc ~/.vimrc
+  
+  ln -s ~/configurations/vimrc/bundle ~/.vim/bundle
 
 
 ==========================
@@ -56,5 +63,5 @@ sudo apt-get install vim git tmux
 
 TODO
 ===============================
-http://sjl.bitbucket.org/gundo.vim/#requirements
-https://github.com/gmarik/Vundle.vim 설치
+* http://sjl.bitbucket.org/gundo.vim/#requirements
+* https://github.com/gmarik/Vundle.vim 설치
