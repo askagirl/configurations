@@ -1,0 +1,141 @@
+" An example for a gvimrc file.
+" The commands in this are executed when the GUI is started.
+"
+" Maintainer:	Bram Moolenaar <Bram@vim.org>
+" Last change:	2001 Sep 02
+"
+" To use it, copy it to
+"     for Unix and OS/2:  ~/.gvimrc
+"	      for Amiga:  s:.gvimrc
+"  for MS-DOS and Win32:  $VIM\_gvimrc
+"	    for OpenVMS:  sys$login:.gvimrc
+
+" Make external commands work through a pipe instead of a pseudo-tty
+"set noguipty
+
+" set the X11 font to use
+" set guifont=-misc-fixed-medium-r-normal--14-130-75-75-c-70-iso8859-1
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle
+" required! 
+Plugin 'gmarik/Vundle.git'
+
+" My Plugins here:
+"
+" original repos on github
+Plugin 'vim-coffee-script'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'tpope/vim-rails.git'
+Plugin 'scrooloose/nerdtree'
+Plugin 'motemen/git-vim'
+Plugin 'powerline/powerline'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tpope/vim-cucumber'
+Plugin 'slim-template/vim-slim'
+Plugin 'saltstack/salt-vim'
+Plugin 'Glench/Vim-Jinja2-Syntax'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/unite.vim'
+" vim-scripts repos
+Plugin 'L9'
+Plugin 'FuzzyFinder'
+Plugin 'Gundo'
+" non github repos
+"Plugin 'git://git.wincent.com/command-t.git'
+" ...
+call vundle#end()
+
+filetype plugin indent on     " required!
+"
+" Brief help
+" :PluginList          - list configured bundles
+" :PluginInstall(!)    - install(update) bundles
+" :PluginSearch(!) foo - search(or refresh cache first) for foo
+" :PluginClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Plugin command are not allowed..
+
+
+set ch=2		" Make command line two lines high
+
+set mousehide		" Hide the mouse when typing text
+
+" Make shift-insert work like in Xterm
+map <S-Insert> <MiddleMouse>
+map! <S-Insert> <MiddleMouse>
+
+" Only do this for Vim version 5.0 and later.
+if version >= 500
+
+  " I like highlighting strings inside C comments
+  let c_comment_strings=1
+
+  " Switch on syntax highlighting if it wasn't on yet.
+  if !exists("syntax_on")
+    syntax on
+  endif
+
+  " Switch on search pattern highlighting.
+  set hlsearch
+
+  " For Win32 version, have "K" lookup the keyword in a help file
+  "if has("win32")
+  "  let winhelpfile='windows.hlp'
+  "  map K :execute "!start winhlp32 -k <cword> " . winhelpfile <CR>
+  "endif
+
+  " Set nice colors
+  " background for normal text is light grey
+  " Text below the last line is darker grey
+  " Cursor is green, Cyan when ":lmap" mappings are active
+  " Constants are not underlined but have a slightly lighter background
+  highlight Normal guibg=grey90
+  highlight Cursor guibg=Green guifg=NONE
+  highlight lCursor guibg=Cyan guifg=NONE
+  highlight NonText guibg=grey80
+  highlight Constant gui=NONE guibg=grey95
+  highlight Special gui=NONE guibg=grey95
+
+endif
+
+set ts=2
+set sw=2
+set expandtab
+set si
+set statusline=%#ErrorMsg#%{GitBranch()}%#StatusLine# 
+
+set laststatus=2
+language en_US.UTF-8
+let g:Powerline_symbols = 'fancy'
+set guifont=Menlo\ Regular\ for\ Powerline
+
+syntax enable
+set background=dark
+colorscheme solarized
+"python from powerline.vim import setup as powerline_setup
+"python powerline_setup()
+"python del powerline_setup
+set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
+nnoremap <F5> :GundoToggle<CR>
+let $XIKI_DIR="/Library/Ruby/Gems/2.0.0/gems/xiki-1.0.1a"
+"source /Library/Ruby/Gems/2.0.0/gems/xiki-1.0.1a/etc/vim/xiki.vim
+" Force using the Django template syntax file
+let g:sls_use_jinja_syntax = 1
+nnoremap <silent> ,g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+if executable('pt')
+  let g:unite_source_grep_command = 'pt'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor'
+  let g:unite_source_grep_recursive_opt = ''
+  let g:unite_source_grep_encoding = 'utf-8'
+endif
+
