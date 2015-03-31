@@ -35,13 +35,24 @@ set fencs=utf-8,cp949,cp932,euc-jp,shift-jis,big5,latin1,ucs2-le
 let NERDShutUp=1
 set t_Co=256
 
-colorscheme solarized
+"colorscheme solarized
 if has('gui_running')
   set background=light
 else
   set background=dark
 endif
 
+filetype off                  " required
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'Glench/Vim-Jinja2-Syntax'
+Plugin 'saltstack/salt-vim'
+Plugin 'klen/python-mode'
+Plugin 'Shougo/unite.vim'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'fatih/vim-go'
+call vundle#end()            " required
 filetype plugin indent on
 
 filet on
@@ -67,8 +78,8 @@ set laststatus=2
 set t_Co=256
 
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+"set rtp+=~/.vim/bundle/vundle/
+"call vundle#rc()
 
 " Fireplace (Clojure support)
 Bundle 'tpope/vim-fireplace'
@@ -101,3 +112,15 @@ Bundle 'kovisoft/slimv'
   
 " vim-clojure-static
 Bundle 'guns/vim-clojure-static'
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map <C-n> :NERDTreeToggle<CR>
+
+nnoremap <silent> ,g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+if executable('pt')
+    let g:unite_source_grep_command = 'pt'
+    let g:unite_source_grep_default_opts = '--nogroup --nocolor'
+    let g:unite_source_grep_recursive_opt = ''
+    let g:unite_source_grep_encoding = 'utf-8'
+endif
